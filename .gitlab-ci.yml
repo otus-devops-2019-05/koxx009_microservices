@@ -41,7 +41,7 @@ deploy_dev_job:
 staging:
   stage: stage
   when: manual
-  only
+  only:
     - /^\d+\.\d+\.\d+/
   script:
     - echo 'Deploy'
@@ -52,7 +52,7 @@ staging:
 production:
   stage: production
   when: manual
-  only
+  only:
     - /^\d+\.\d+\.\d+/
   script:
     - echo 'Deploy'
