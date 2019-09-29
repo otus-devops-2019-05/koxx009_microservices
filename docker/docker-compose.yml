@@ -23,20 +23,6 @@ services:
       - front_net
       - back_net
 
-  prometheus:
-    image: ${USERNAME}/prometheus
-    ports:
-      - '9090:9090'
-    volumes:
-      - prometheus_data:/prometheus
-    networks:
-      - front_net
-      - back_net
-    command:
-      - '--config.file=/etc/prometheus/prometheus.yml'
-      - '--storage.tsdb.path=/prometheus'
-      - '--storage.tsdb.retention=1d'
-
   node-exporter:
     image: prom/node-exporter:v0.15.2
     user: root
