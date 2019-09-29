@@ -55,7 +55,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:1195",
           "expr": "histogram_quantile(0.95, sum(rate(ui_request_response_time_bucket[5m])) by (le))",
           "format": "time_series",
           "hide": false,
@@ -82,7 +81,6 @@
       },
       "yaxes": [
         {
-          "$$hashKey": "object:1677",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -91,7 +89,6 @@
           "show": true
         },
         {
-          "$$hashKey": "object:1678",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -142,7 +139,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:1130",
           "expr": "rate(ui_request_count{http_status=~\"^[45].*\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
@@ -222,7 +218,6 @@
       "steppedLine": false,
       "targets": [
         {
-          "$$hashKey": "object:1294",
           "expr": "rate(ui_request_count{http_status=~\"^[23].*\"}[1m])",
           "format": "time_series",
           "intervalFactor": 1,
@@ -267,7 +262,7 @@
       ]
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [],
@@ -275,8 +270,8 @@
     "list": []
   },
   "time": {
-    "from": "2019-09-29T21:20:16.221Z",
-    "to": "2019-09-29T21:50:07.000Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -306,5 +301,5 @@
   "timezone": "",
   "title": "UI_service_monitoring",
   "uid": "APaf4m2Zk",
-  "version": 4
+  "version": 6
 }
