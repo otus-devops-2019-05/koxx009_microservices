@@ -102,4 +102,26 @@ Docker-compose поддерживает переменные внутри фай
 
 Также был рассмотрен инструмент "node_exporter" благодаря которому, появляется возможность собирать метрику с тех приложение в которых изначально нет такой возможности.
 
+----------
 
+#### 21 "Мониторинг приложения и инфраструктуры"
+
+В ходе задания были рассмотрены:
+ - продвинутые функии Prometheus
+ - интеграция Prometheus с Grafana
+ - интеграция Prometheus с Alertmanager
+
+В Grafana были настроены 2 дашборда:
+ - UI_Service_Monitoring
+ - Business_Logic_Monitoring
+
+Оба дашборда сохранены в формате JSON в соответствующих файлах в каталоге `./monitoring/grafana/dashboards`
+
+Также в ходе интеграции Prometheus с Alertmanager была настроена нотификация в персональный канал Slack, с помощью плагина "Incoming Webhook"
+
+Итоговые образы докер-контейнеров залиты в персональный репозиторий Docker Hub. Ниже ссылки на проекты в Docker Hub:
+ - https://hub.docker.com/r/koxx009/alertmanager
+ - https://hub.docker.com/r/koxx009/prometheus
+ - https://hub.docker.com/r/koxx009/post
+ - https://hub.docker.com/r/koxx009/comment
+ - https://hub.docker.com/r/koxx009/ui
