@@ -1,12 +1,16 @@
 version: '3.3'
 services:
   post_db:
+    hostname: post_db
+    container_name: post_db
     image: mongo:${MONGO_VERSION}
     volumes:
       - post_db:/data/db
     networks:
       - back_net
   ui:
+    hostname: ui
+    container_name: ui
     image: ${USERNAME}/ui:${UI_VERSION}
     environment:
       - POST_SERVICE_HOST=post
@@ -27,6 +31,8 @@ services:
 
 
   post:
+    hostname: post
+    container_name: post
     image: ${USERNAME}/post:${POST_VERSION}
     environment:
       - POST_DATABASE_HOST=post_db
@@ -45,6 +51,8 @@ services:
         tag: service.post
 
   comment:
+    hostname: comment
+    container_name: comment
     image: ${USERNAME}/comment:${COMMENT_VERSION}
     networks:
       - front_net
